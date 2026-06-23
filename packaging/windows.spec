@@ -27,11 +27,11 @@ for package in ("gradio", "litellm", "llama_index", "sentence_transformers", "tr
     binaries += package_binaries
     hiddenimports += package_hiddenimports
 
-hiddenimports += ["mcp_tool_runner"]
+hiddenimports += ["app", "mcp_tool_runner"]
 hiddenimports += collect_submodules("llama_index")
 
 a = Analysis(
-    [project_path("app.py")],
+    [project_path("packaging", "windows_launcher.py")],
     pathex=[project_root],
     binaries=binaries,
     datas=datas,

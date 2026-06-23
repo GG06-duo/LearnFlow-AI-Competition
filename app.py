@@ -575,7 +575,7 @@ def create_app():
 
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) >= 4 and sys.argv[1] == "--mcp-tool":
         from mcp_tool_runner import run_tool
         import asyncio
@@ -668,3 +668,7 @@ if __name__ == "__main__":
 
     app = create_app()
     app.launch(inbrowser=True)
+
+
+if __name__ == "__main__":
+    main()
