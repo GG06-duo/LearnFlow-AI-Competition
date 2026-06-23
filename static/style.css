@@ -1,0 +1,525 @@
+:root {
+    --surface: rgba(47, 65, 88, 0.78);
+    --surface-strong: rgba(38, 54, 75, 0.96);
+    --border: rgba(191, 219, 254, 0.18);
+    --text-muted: #b9c9dc;
+    --blue: #3b82f6;
+    --purple: #8b5cf6;
+}
+
+body,
+.gradio-container {
+    background: linear-gradient(135deg, #29394e 0%, #17263a 100%) fixed !important;
+    color: #f0f6ff !important;
+    font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif !important;
+}
+
+.gradio-container {
+    min-height: 100vh;
+    --body-background-fill: transparent;
+    --background-fill-primary: rgba(39, 55, 76, 0.82);
+    --background-fill-secondary: rgba(48, 66, 89, 0.82);
+    --block-background-fill: rgba(47, 65, 88, 0.78);
+    --block-border-color: rgba(191, 219, 254, 0.18);
+    --block-label-background-fill: transparent;
+    --block-label-text-color: #f0f6ff;
+    --block-title-text-color: #f0f6ff;
+    --body-text-color: #f0f6ff;
+    --body-text-color-subdued: #b9c9dc;
+    --input-background-fill: rgba(53, 72, 96, 0.96);
+    --input-background-fill-focus: rgba(60, 82, 110, 1);
+    --input-border-color: rgba(147, 197, 253, 0.32);
+    --input-border-color-focus: #60a5fa;
+    --input-placeholder-color: #b9c9dc;
+}
+
+.learnflow-hero {
+    margin-bottom: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    background: rgba(45, 62, 84, 0.78);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 18px 50px rgba(4, 10, 20, 0.24);
+}
+
+.learnflow-hero h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: transparent;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.learnflow-hero p {
+    margin: 12px 0 0;
+    color: #c1d0e2;
+    font-size: 1.1rem;
+}
+
+.tab-nav,
+.tab-container {
+    gap: 8px !important;
+    padding: 6px !important;
+    background: rgba(38, 54, 75, 0.84) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 999px !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.tab-nav button,
+.tab-container button[role="tab"] {
+    min-height: 42px !important;
+    padding: 8px 18px !important;
+    color: var(--text-muted) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 999px !important;
+    transition: all 200ms ease !important;
+}
+
+.tab-nav button:hover,
+.tab-container button[role="tab"]:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.tab-nav button.selected,
+.tab-container button[role="tab"].selected {
+    color: #fff !important;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    border-color: rgba(147, 197, 253, 0.4) !important;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.32) !important;
+}
+
+.panel,
+.quiz-section,
+.overall-progress-card,
+.stats-card {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.gradio-container .form {
+    gap: 10px !important;
+    padding: 10px !important;
+    background: rgba(43, 60, 82, 0.72) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+}
+
+.gradio-container .block {
+    color: #e5edf8 !important;
+    background: rgba(45, 63, 86, 0.74) !important;
+    border-color: rgba(191, 219, 254, 0.16) !important;
+}
+
+.gradio-container .prose,
+.gradio-container .prose h1,
+.gradio-container .prose h2,
+.gradio-container .prose h3,
+.gradio-container .prose h4,
+.gradio-container .prose p,
+.gradio-container .prose li,
+.gradio-container span[data-testid="block-info"] {
+    color: #e5edf8 !important;
+}
+
+.gradio-container .progress-text[data-progress-label] {
+    font-size: 0 !important;
+}
+
+.gradio-container .progress-text[data-progress-label]::before {
+    content: attr(data-progress-label);
+    color: #e5edf8;
+    font-size: var(--text-sm);
+}
+
+.gradio-container .prose em,
+.gradio-container .prose small {
+    color: var(--text-muted) !important;
+}
+
+.gradio-container input::placeholder,
+.gradio-container textarea::placeholder {
+    color: #b3bfd0 !important;
+    opacity: 1 !important;
+}
+
+.panel {
+    padding: 18px !important;
+    border-radius: 8px !important;
+}
+
+.gr-button,
+button.primary,
+button.secondary {
+    min-height: 40px !important;
+    color: #fff !important;
+    font-weight: 650 !important;
+    border-radius: 8px !important;
+    transition: all 200ms ease !important;
+}
+
+.gr-button,
+button.primary {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    border: 1px solid rgba(147, 197, 253, 0.28) !important;
+}
+
+.gr-button:hover,
+button.primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 26px rgba(37, 99, 235, 0.34) !important;
+}
+
+.secondary-btn,
+button.secondary {
+    background: rgba(51, 65, 85, 0.74) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.secondary-btn:hover,
+button.secondary:hover {
+    border-color: rgba(96, 165, 250, 0.8) !important;
+    background: rgba(59, 130, 246, 0.14) !important;
+}
+
+.danger-btn {
+    background: linear-gradient(135deg, #ef4444, #b91c1c) !important;
+    border-color: rgba(252, 165, 165, 0.3) !important;
+}
+
+.danger-btn:hover {
+    box-shadow: 0 10px 26px rgba(220, 38, 38, 0.32) !important;
+}
+
+.gradio-container input:not([type="checkbox"]):not([type="radio"]),
+.gradio-container textarea,
+.gradio-container select,
+.gradio-container [role="listbox"] {
+    color: #f1f5f9 !important;
+    background: rgba(53, 72, 96, 0.96) !important;
+    border-color: rgba(147, 197, 253, 0.3) !important;
+    transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease !important;
+}
+
+.gradio-container input:not([type="checkbox"]):not([type="radio"]):focus,
+.gradio-container textarea:focus,
+.gradio-container select:focus,
+.gradio-container [role="listbox"]:focus-within {
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
+    outline: none !important;
+}
+
+.question-types-checkbox-group label,
+.difficulty-radio-group label {
+    gap: 10px !important;
+    padding: 9px 14px !important;
+    color: #edf5ff !important;
+    background: rgba(53, 72, 96, 0.92) !important;
+    border: 1px solid rgba(147, 197, 253, 0.24) !important;
+    border-radius: 8px !important;
+    transition: all 200ms ease !important;
+}
+
+.question-types-checkbox-group label:hover,
+.difficulty-radio-group label:hover {
+    background: rgba(66, 89, 118, 0.96) !important;
+    border-color: rgba(96, 165, 250, 0.7) !important;
+}
+
+.question-types-checkbox-group input[type="checkbox"],
+.difficulty-radio-group input[type="radio"] {
+    width: 18px !important;
+    min-width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    background: rgba(25, 40, 59, 0.42) !important;
+    border: 2px solid #9fb9d8 !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    transition: all 160ms ease !important;
+}
+
+.question-types-checkbox-group input[type="checkbox"] {
+    border-radius: 5px !important;
+}
+
+.difficulty-radio-group input[type="radio"] {
+    border-radius: 50% !important;
+}
+
+.question-types-checkbox-group input[type="checkbox"]:checked {
+    background: #3b82f6 !important;
+    border-color: #93c5fd !important;
+    box-shadow: inset 0 0 0 3px #3b82f6, inset 0 0 0 5px #dbeafe !important;
+}
+
+.difficulty-radio-group input[type="radio"]:checked {
+    background: #60a5fa !important;
+    border-color: #bfdbfe !important;
+    box-shadow: inset 0 0 0 4px rgba(37, 56, 79, 1) !important;
+}
+
+.question-types-checkbox-group label:has(input:checked),
+.difficulty-radio-group label:has(input:checked) {
+    color: #fff !important;
+    background: rgba(37, 99, 235, 0.34) !important;
+    border-color: rgba(147, 197, 253, 0.78) !important;
+}
+
+.quiz-answer-radio label {
+    gap: 12px !important;
+    padding: 12px 16px !important;
+    color: #e8f0fb !important;
+    background: rgba(53, 72, 96, 0.92) !important;
+    border: 1px solid rgba(147, 197, 253, 0.22) !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
+}
+
+.quiz-answer-radio label:hover {
+    background: rgba(66, 89, 118, 0.98) !important;
+    border-color: rgba(96, 165, 250, 0.64) !important;
+}
+
+.quiz-answer-radio label:has(input:checked) {
+    color: #fff !important;
+    background: rgba(37, 99, 235, 0.3) !important;
+    border-color: rgba(147, 197, 253, 0.72) !important;
+    box-shadow: 0 6px 18px rgba(15, 36, 64, 0.24) !important;
+}
+
+.content-type-radio-group,
+.learning-style-radio-group {
+    padding: 14px 16px !important;
+    background: rgba(45, 63, 86, 0.72) !important;
+    border: 1px solid rgba(147, 197, 253, 0.2) !important;
+    border-radius: 8px !important;
+}
+
+.content-type-radio-group > div:last-child,
+.learning-style-radio-group > div:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    padding: 4px !important;
+    background: rgba(29, 45, 65, 0.54) !important;
+    border: 1px solid rgba(147, 197, 253, 0.18) !important;
+    border-radius: 8px !important;
+}
+
+.content-type-radio-group label,
+.learning-style-radio-group label {
+    justify-content: center !important;
+    gap: 8px !important;
+    min-height: 42px !important;
+    padding: 8px 18px !important;
+    color: #c7d6e8 !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: all 200ms ease !important;
+}
+
+.content-type-radio-group label:hover,
+.learning-style-radio-group label:hover {
+    color: #fff !important;
+    background: rgba(96, 165, 250, 0.12) !important;
+}
+
+.content-type-radio-group input[type="radio"],
+.learning-style-radio-group input[type="radio"] {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.content-type-radio-group label:has(input:checked),
+.learning-style-radio-group label:has(input:checked) {
+    color: #fff !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+    border-color: rgba(191, 219, 254, 0.58) !important;
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.28) !important;
+}
+
+.options {
+    background: var(--surface-strong) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+.gr-file {
+    background: rgba(46, 65, 88, 0.7) !important;
+    border: 2px dashed rgba(96, 165, 250, 0.65) !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0 0 24px rgba(139, 92, 246, 0.05);
+    transition: all 200ms ease !important;
+}
+
+.gr-file:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+    border-color: rgba(167, 139, 250, 0.85) !important;
+    box-shadow: inset 0 0 28px rgba(139, 92, 246, 0.1);
+}
+
+.learnflow-button-large {
+    min-height: 44px !important;
+    padding: 11px 24px !important;
+    font-size: 1rem !important;
+}
+
+.learnflow-button-rounded {
+    border-radius: 8px !important;
+}
+
+.quiz-section {
+    margin-bottom: 20px !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+}
+
+.stats-card {
+    position: relative;
+    overflow: hidden;
+    padding: 22px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.stats-card::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    content: "";
+    background: linear-gradient(90deg, var(--stats-accent), #8b5cf6);
+}
+
+.stats-card h3 {
+    margin: 0;
+    color: var(--stats-accent);
+    font-size: 1.2rem;
+}
+
+.stats-value {
+    margin: 8px 0 !important;
+    color: #fff !important;
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+}
+
+.stats-description,
+.overall-progress-card p {
+    margin-bottom: 0 !important;
+    color: var(--text-muted) !important;
+}
+
+.overall-progress-card {
+    margin: 10px 0;
+    padding: 22px;
+    border-radius: 8px;
+}
+
+.overall-progress-card h3 {
+    margin-top: 0;
+    color: #93c5fd;
+}
+
+.progress-track {
+    height: 20px;
+    overflow: hidden;
+    background: rgba(34, 49, 69, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #60a5fa, #8b5cf6);
+    border-radius: inherit;
+    transition: width 500ms ease;
+}
+
+.gradio-container .table-wrap,
+.gradio-container .dataframe,
+.gradio-container table {
+    color: #edf5ff !important;
+    background: rgba(44, 61, 82, 0.94) !important;
+    border-color: rgba(147, 197, 253, 0.26) !important;
+}
+
+.gradio-container table thead,
+.gradio-container table thead tr,
+.gradio-container table thead th,
+.gradio-container table thead button {
+    color: #f8fbff !important;
+    background: rgba(55, 76, 101, 1) !important;
+    border-color: rgba(147, 197, 253, 0.26) !important;
+}
+
+.gradio-container table tbody,
+.gradio-container table tbody tr,
+.gradio-container table tbody td {
+    color: #e6eefb !important;
+    background: rgba(42, 59, 80, 0.9) !important;
+    border-color: rgba(147, 197, 253, 0.16) !important;
+}
+
+.gradio-container [role="grid"] {
+    overflow: hidden;
+    background: rgba(44, 61, 82, 0.94) !important;
+    border: 1px solid rgba(147, 197, 253, 0.26) !important;
+    border-radius: 8px !important;
+}
+
+.gradio-container [role="grid"] button {
+    color: #f8fbff !important;
+}
+
+.correct-feedback {
+    color: #34d399 !important;
+    font-weight: 700 !important;
+}
+
+.incorrect-feedback {
+    color: #f87171 !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 720px) {
+    .learnflow-hero {
+        padding: 22px 14px;
+    }
+
+    .learnflow-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .tab-nav,
+    .tab-container {
+        border-radius: 8px !important;
+    }
+
+    .tab-nav button,
+    .tab-container button[role="tab"] {
+        padding: 7px 10px !important;
+    }
+}
